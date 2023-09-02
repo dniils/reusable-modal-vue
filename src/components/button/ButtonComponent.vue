@@ -1,5 +1,5 @@
 <template>
-  <button class="btn btn_positive">{{ buttonText }}</button>
+  <button :class="`btn_${btnType}`" class="btn">{{ buttonText }}</button>
 </template>
 
 <script setup>
@@ -7,6 +7,7 @@ import { defineProps, ref } from "vue";
 
 const props = defineProps({
   text: { type: String, default: () => "buttonText" },
+  btnType: { type: String, default: () => "positive" },
 });
 const buttonText = ref(props.text);
 </script>
@@ -26,11 +27,26 @@ const buttonText = ref(props.text);
   }
 
   &_positive {
-    color: #fff;
     background-color: #14800f;
 
     &:hover {
       background-color: #199812;
+    }
+  }
+
+  &_negative {
+    background-color: #960000;
+
+    &:hover {
+      background-color: #b10000;
+    }
+  }
+
+  &_neutral {
+    background-color: #06328b;
+
+    &:hover {
+      background-color: #0846c0;
     }
   }
 }

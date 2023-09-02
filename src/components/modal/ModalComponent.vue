@@ -12,13 +12,30 @@
       </div>
     </div>
     <div class="modal__buttons">
-      <button-component text="Okay!"></button-component>
+      <button-component
+        @click="handleNoClick()"
+        btn-type="negative"
+        text="No"
+      ></button-component>
+      <button-component
+        @click="handleYesClick()"
+        text="Yes!"
+      ></button-component>
+      <button-component text="What?" btn-type="neutral"></button-component>
     </div>
   </div>
 </template>
 
 <script setup>
 import ButtonComponent from "../button/ButtonComponent.vue";
+
+function handleNoClick() {
+  console.log("NO!");
+}
+
+function handleYesClick() {
+  console.log("YES!");
+}
 </script>
 
 <style scoped lang="scss">
@@ -55,6 +72,10 @@ import ButtonComponent from "../button/ButtonComponent.vue";
   }
 
   &__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: center;
     padding: 0.5rem;
     background-color: #01143f;
   }
