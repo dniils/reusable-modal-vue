@@ -1,15 +1,17 @@
 <template>
-  <button :class="`btn_${btnType}`" class="btn">{{ buttonText }}</button>
+  <button :class="`btn_${btnType}`" class="btn" :disabled="props.disabled">
+    <slot name="buttonIcon"></slot>
+    <slot name="buttonText">click</slot>
+  </button>
 </template>
 
 <script setup>
-import { defineProps, ref } from "vue";
+import { defineProps } from "vue";
 
 const props = defineProps({
-  text: { type: String, default: () => "buttonText" },
   btnType: { type: String, default: () => "positive" },
+  disabled: Boolean,
 });
-const buttonText = ref(props.text);
 </script>
 
 <style lang="scss" scoped>
@@ -21,15 +23,21 @@ const buttonText = ref(props.text);
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.15s ease-in-out;
+  margin: 0.5rem 0;
 
-  &:hover {
+  &:hover:enabled {
     cursor: pointer;
+  }
+
+  &:disabled {
+    color: #747474;
+    background-color: #5d5d5d;
   }
 
   &_positive {
     background-color: #14800f;
 
-    &:hover {
+    &:hover:enabled {
       background-color: #199812;
     }
   }
@@ -37,7 +45,7 @@ const buttonText = ref(props.text);
   &_negative {
     background-color: #960000;
 
-    &:hover {
+    &:hover:enabled {
       background-color: #b10000;
     }
   }
@@ -45,7 +53,7 @@ const buttonText = ref(props.text);
   &_neutral {
     background-color: #06328b;
 
-    &:hover {
+    &:hover:enabled {
       background-color: #0846c0;
     }
   }
