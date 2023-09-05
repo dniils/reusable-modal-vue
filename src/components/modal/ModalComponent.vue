@@ -111,11 +111,11 @@ const modalConfig = inject("modalConfig");
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   font-size: 1rem;
-  max-width: 300px;
-  min-width: 200px;
+  max-width: 18.75rem;
+  min-width: 12.5rem;
   background-color: #010b25;
-  border: 2px solid #1c4483;
-  border-radius: 10px;
+  border: 0.125rem solid #1c4483;
+  border-radius: 0.625rem;
   overflow-y: auto;
   overflow-x: hidden;
   text-align: center;
@@ -132,31 +132,31 @@ const modalConfig = inject("modalConfig");
     background-color: #01143f;
 
     &_negative {
-      box-shadow: 0px -8px 119px 5px rgba(255, 0, 0, 0.5);
+      box-shadow: 0rem -0.5rem 7.438rem 0.313rem rgba(255, 0, 0, 0.5);
     }
 
     &_positive {
-      box-shadow: 0px -8px 119px 5px rgba(172, 255, 47, 0.5);
+      box-shadow: 0rem -0.5rem 7.438rem 0.313rem rgba(172, 255, 47, 0.5);
     }
 
     &_neutral {
-      box-shadow: 0px -8px 119px 5px rgba(173, 216, 230, 0.5);
+      box-shadow: 0rem -0.5rem 7.438rem 0.313rem rgba(173, 216, 230, 0.5);
     }
 
     &_warning {
-      box-shadow: 0px -8px 119px 5px rgb(186, 177, 84, 0.6);
+      box-shadow: 0rem -0.5rem 7.438rem0.313rem rgb(186, 177, 84, 0.6);
     }
   }
 
   &__window-title {
     width: 100%;
     text-align: center;
-    padding-left: 12px;
+    padding-left: 0.75rem;
   }
 
   &__btn-close {
-    width: 12px;
-    height: 12px;
+    width: 0.75rem;
+    height: 0.75rem;
 
     &:hover {
       cursor: pointer;
@@ -172,7 +172,7 @@ const modalConfig = inject("modalConfig");
     max-height: 80vh;
     overflow-y: auto;
     overflow-x: hidden;
-    box-shadow: 120px 80px 40px 20px #0ff;
+    box-shadow: 7.5rem 5rem 2.5rem 1.25rem #0ff;
   }
 
   &__title {

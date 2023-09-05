@@ -16,11 +16,11 @@
   gap: 0.2rem;
   background-color: #002571;
   padding: 0.3rem 0.5rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 
   &__icon {
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
   }
 
   &__amount {

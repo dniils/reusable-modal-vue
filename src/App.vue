@@ -5,7 +5,7 @@
     </button-component>
 
     <Teleport to="body">
-      <modal-component v-if="modal.modalActive.value"></modal-component>
+      <modal-component v-if="!modal.modalActive.value"></modal-component>
     </Teleport>
   </div>
 </template>
@@ -18,24 +18,24 @@ import { modalConfig } from "./components/modal/modalConfigs.ts";
 
 const modal = useModal(modalConfig.purchaseSuccess);
 
-function showBtnClickEventHandler() {
-  modal.show();
-}
+// function showBtnClickEventHandler() {
+//   modal.show();
+// }
 </script>
 
 <style lang="scss">
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 0.2rem;
 }
 
 ::-webkit-scrollbar-track {
   background: #23232d;
-  border-radius: 4px;
+  border-radius: 0.1rem;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #484f69;
-  border-radius: 4px;
+  border-radius: 0.1rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
