@@ -5,7 +5,7 @@
     </button-component>
 
     <Teleport to="body">
-      <modal-component v-if="!modal.modalActive.value"></modal-component>
+      <modal-component v-if="modal.modalActive.value"></modal-component>
     </Teleport>
   </div>
 </template>
@@ -13,14 +13,14 @@
 <script setup>
 import ModalComponent from "./components/modal/ModalComponent.vue";
 import ButtonComponent from "./components/button/ButtonComponent.vue";
-import { useModal } from "./components/modal/useModal.ts";
+import { useModal } from "./composables/useModal.ts";
 import { modalConfig } from "./components/modal/modalConfigs.ts";
 
 const modal = useModal(modalConfig.purchaseSuccess);
 
-// function showBtnClickEventHandler() {
-//   modal.show();
-// }
+function showBtnClickEventHandler() {
+  modal.show();
+}
 </script>
 
 <style lang="scss">
